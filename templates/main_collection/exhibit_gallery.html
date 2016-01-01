@@ -1,0 +1,75 @@
+{% extends "main_collection/base.html" %}
+
+{% block title %}{{exhibit.title}}{% endblock %}
+
+{% block content %}
+
+{% if exhibit %}
+
+
+
+<div class= "container">
+
+
+
+<div id="carousel-generic" class="carousel slide" data-ride="carousel" data-interval="0" data-slide-to="{{forloop.counter0}}">
+
+ 
+  <!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+
+{% for item in items %}
+  
+<div class="item {% if forloop.first %} active      {%     endif %}"> 
+                   
+  <div align="center">
+  <img class="exhibit_img" src='/media/{{item.file_up}}'>
+  </div>
+
+</div>
+{% endfor %}
+</div>
+ <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+
+
+</div>
+</div>
+
+
+
+
+
+ 
+ <!-- Carousel -->
+
+
+
+
+
+<div class="container">
+<div class="row">
+<div class = "col-xs-12">
+
+<div class="text-only">         
+
+<pre class="text-only">
+{{exhibit.text}}
+</pre>
+
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+{% endif %}
+
+{% endblock %}
