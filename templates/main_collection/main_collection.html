@@ -1,0 +1,161 @@
+{% load staticfiles %}
+
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+          rel="stylesheet" media="screen">
+    <link href="{% static 'bootstrap/css/custom.css' %}"
+          rel="stylesheet" media="screen">
+  </head>
+
+
+
+<div class= "container">
+<div class="jumbotron specialjum">
+<h1 class="main_page">Welcome to The Digital Project's Studio Main Collections</h1>
+
+<header>
+    <div class="container clearfix">
+        
+
+<div class= "navbar-wrapper">
+    <div class="container">
+        <nav class = "navbar navbar-inverse navbar-fixed-top" id="navbar_whole">
+            <div class = "container">
+                <div class = "navbar-header">
+                    <button type= "button" class = "navbar-toggle collapsed" data-toggle = "collapse" data-target= "#navbar" aria-expanded="false" aria-controls = "navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{%url 'index' %}">
+                        <!-- <h1 id="logo"> -->
+                        <img class="img-responsive" src="/static/bootstrap/img/hatcher_grad_lib.png">
+                        <!-- </h1> -->
+                    </a>
+                </div>
+                
+                <div id= "navbar" class="navbar-collapse collapse">
+
+
+
+                    <ul class="nav navbar-nav">
+
+                        <li>
+                            <a href="{%url 'index' %}">Collections</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'all_items' %}">Items</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'all_exhibits' %}">Exhibits</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+</div>
+</header>
+</div>
+</div>
+
+<body>
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+<p class="intro">All of the collections for the different Exhibits can be found here.</p>
+</div>
+</div>
+</div>
+<br />
+
+<div class="container">
+<div class = "row">
+<div class="wrapper"> 
+
+{% if entries %} 
+    	{% for Collection in entries %}
+
+<div class = "col-xs-12 col-lg-6">         
+        <div class="{% cycle 'row1' 'row2' %}">
+    	<div class="item_collections">
+            <ul>
+        <img class="collection_photo" src="/media/{{Collection.cover_image}}"/>
+       
+         
+        <li class = "big_title">
+            Collection Name: 
+            <br />
+<!-- The line below isn't working. I can't get it to go to the collection.html page -->
+            <a href = "{% url 'collection' Collection.location %}">{{Collection.title}}</a>
+            
+                <br />
+      
+        </li>
+
+
+            </ul>
+
+        </div>
+        </div>
+
+</div>
+
+{% endfor %}
+{% endif %} 
+
+
+    </div>
+    </div>
+</div>
+
+<footer>
+<div class= "navbar navbar-inverse navbar-static-bottom" role="navigation">
+    <div class="container">
+    <div class="navbar-text pull-left">
+    </div>
+    
+    <div class= "navbar-text pull-right">
+<!-- insert social media / github link here -->
+<!--         <a href="https://twitter.com/oK_Shep">
+            <i class="fa fa-twitter-square fa-2x"></i></a> -->
+    </div>
+    
+    <div class="navbar-text pull-left">
+    &copy; Digital Projects Studio, 2015<br/>
+
+    <?php
+     $filename = 'somefile.txt';
+        if(basename($_SERVER['SCRIPT_NAME'])) {
+            echo "Page was last updated on " . date ("F d Y H:i:s.", filemtime(basename($_SERVER['SCRIPT_NAME'])));
+}?>
+    </div>
+    </div>
+</div>  
+</footer>
+
+
+   
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static 'bootstrap/js/navbar.js' %}"></script>
+    <script src="{% static 'bootstrap/js/npm.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
+
+
+
+
+{% endblock %}
