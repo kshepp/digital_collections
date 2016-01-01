@@ -1,0 +1,72 @@
+{% extends "main_collection/base.html" %}
+
+{% block title %}Items{% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="col-xs-12">
+<h3>All the items for the collections are placed here</h3>
+    </div>
+</div>
+</div>
+
+<div class="container">
+<div class = "row">
+<div class="wrapper"> 
+
+{% if entries %}
+
+    	{% for Item in entries %}
+<div class = "col-xs-12 col-md-6 col-lg-4">         
+<div class="{% cycle 'row1' 'row2' %}">
+<div class="item">
+            
+            <ul>
+    	<div align="center">
+          
+            <img class="thumbnail" src="/media/{{Item.file_up}}"/>
+          
+        </div>
+    	<li class = "big_title"><b>Title:</b> {{Item.title}}</li>
+
+    	
+
+    	<li><b>Location: </b>{{Item.location}}</li>
+    	<li><b>Creator: </b>{{Item.creator}}</li>
+    	<li><b>Publisher: </b>{{Item.publisher}}</li>
+    	<li><b>Date: </b>{{Item.date}}</li>
+    	<li><b>File Format: </b>{{Item.file_format}}</li>
+    	<li><b>Subject: </b>{{Item.subject}}</li>
+    	<li><b>Description: <b/>{{Item.description}}</li>
+    	<li><b>Language: </b>{{Item.language}}</li>
+    	<li><b>Source: </b>{{Item.source}}</li>
+    	<li><b>Rights: </b> {{Item.rights}}</li>
+    	<li><b>Resolution: </b>{{Item.resolution}}</li>
+    	<li><b>Quality: </b>{{Item.quality}}</li>
+    	<li><b>Notes: </b> {{Item.notes}}</li>    	
+    	<li><b>File Upload: </b>{{Item.file_up}}</li>
+    	<li><b>Collection Title: </b> 
+        {% for collection in Item.collections.all %}
+           | <a href = "{% url 'collection' collection.location %}">{{collection.title}}</a> | 
+        {% endfor %}
+    	<br />
+    	<br />
+
+
+	</ul>
+</div>
+</div>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+
+
+{% else %}
+    <p></p>
+{% endif %}
+    
+{% endblock %}
