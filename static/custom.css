@@ -1,0 +1,295 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+h1 {
+	font-style: bold;
+	float:left;
+	color: #000000;
+	display: inline-block;
+    margin-top: 150px;
+}
+
+.main_page{
+    font-style: bold;
+    float:left;
+    color: #ffffff;
+    display: inline-block;
+    padding: 25px;
+    margin-top: 250px;
+}
+
+.jumbotron {
+	background-image: url(../img/law_library.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	position: relative;
+	height:100%;
+	width:100%;
+	padding: 0;
+	color: #ffffff;
+}
+
+
+
+/*  Start of Navbar Area  */
+
+/*header doesn't seem to do anything*/
+header {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    -ms-transition: height 0.3s;
+    -o-transition: height 0.3s;
+    transition: height 0.3s;
+}
+
+/*This is the hatcher graduate library*/
+.navbar-brand img {
+    display: inline-block;
+    width:auto;
+	height:40px;
+    float: left;
+    color: white;
+	margin-top:10px;
+	padding-left: 5px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+/*These are the links on the right*/
+ul.nav.navbar-nav{
+    display: inline-block;
+    float: right;
+    background-color: #222;
+    height: 70px;
+    width:auto;
+    margin-top: -15px;
+    font-size: 1.5em;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    width: 100%;
+    height: 70px;
+}
+
+/*This is the text on the right*/
+header nav a {
+    line-height: 150px;
+    margin-left: 20px;
+    color: #9fdbfc;
+    font-weight: 700;
+    font-size: 18px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.navbar nav a:hover {
+    color: white;
+}
+
+.navbar-brand img .smaller {
+    height: 75px;
+}
+.navbar-brand .smaller img {
+    width: 100%;
+    height: 75px;
+}
+.navbar-brand .smaller nav a {
+    line-height: 75px;
+}
+
+/*  End of NavBar area  */
+
+
+p {
+	padding: 25px;
+	font-size: 1.2em;
+}
+
+.intro {
+	border-bottom: solid 2px #8b8e93;
+	font-size: 2em;
+}
+
+
+ul {
+	padding: 30px;
+	margin: 25px;
+}
+
+img.thumbnail{
+    float:center;
+    display:inline-block;
+}
+
+.item {
+    float: left;
+    border:solid 2px #8b8e93;
+    margin: 10px;
+    box-shadow: 5px 5px 3px 3px #888888;
+    width:100%;
+    height:auto;
+}
+
+.item_specific {
+    float: left;
+    width:100%;
+    height:auto;
+}
+
+.item_collections {
+    float: left;
+    border:solid 2px #8b8e93;
+    margin: 10px;
+    box-shadow: 5px 5px 3px 3px #888888;
+    height: auto;
+    width:100%;
+}
+
+.item_big{
+    width:100%;
+    height: auto;
+}
+
+.collection_photo{
+    width:100%;
+    height: auto;
+}
+
+.btn {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display:inline-block;
+}
+
+.wrapper {
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+}
+
+li {
+	list-style-type: none;
+	font-weight: normal;
+	font-size: 1.2em;
+	padding:2px;
+}
+
+img {
+	width: auto;
+	height: 250px;
+}
+
+.big_title {
+	font-size: 1.7em;
+	padding-bottom: 3px;
+}
+
+
+.text-only pre {
+    font-size: 1.2em;
+    background-color: #ffffff;
+    border:none;
+    font-family: arial;
+}
+
+.exhibit_img {
+   width:auto;
+   height:450px;
+    margin: 10px;
+}
+
+.carousel-inner {
+    margin: 10px;
+    height:auto;
+    width:auto;
+}
+
+.description {
+    font-size: 1.2em;
+    text-align: center;
+    float:center;
+    width:250px;
+    height: auto;
+}
+
+.title{
+ font-size: 1.2em;
+    text-align: center;
+    float:center;
+    width:250px;
+    height: auto;
+    font-weight: bold;   
+}
+
+.item_box{
+ margin: 15px;
+ display: inline-block;
+ float: left;
+ overflow: hidden; 
+
+}
+
+
+#navbar_whole {
+  transition: opacity 2s;
+}
+
+footer{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    position: fixed-bottom;
+
+}
+
+
+@media all and (max-width: 660px) {
+    header h1#logo {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+    }
+    header nav {
+        display: block;
+        float: none;
+        height: 50px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    header nav a {
+        line-height: 50px;
+        margin: 0 10px;
+    }
+    header.smaller {
+        height: 75px;
+    }
+    header.smaller h1#logo {
+        height: 40px;
+        line-height: 40px;
+        font-size: 30px;
+    }
+    header.smaller nav {
+        height: 35px;
+    }
+    header.smaller nav a {
+        line-height: 35px;
+    }
+}
